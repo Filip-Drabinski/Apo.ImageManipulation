@@ -1,0 +1,54 @@
+﻿<Window x:Class="Apo.Gui.Dialogs.TwoImageDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Apo.Gui.Dialogs"
+        mc:Ignorable="d"
+        Title="TwoImageDialog" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" Orientation="Horizontal">
+            <TextBlock Text="Other Image: "/>
+            <ComboBox x:Name="CbImages" MinWidth="200" SelectionChanged="CbImages_OnSelectionChanged"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" Orientation="Horizontal">
+            <RadioButton x:Name="RbResize" GroupName="SizeChangeType" IsChecked="True">Resize</RadioButton>
+            <RadioButton x:Name="RbPadding" GroupName="SizeChangeType">Padding</RadioButton>
+            <StackPanel x:Name="SpBlend" Orientation="Horizontal" Visibility="Collapsed">
+                <TextBlock Text="Alpha: "/>
+                <TextBox x:Name="TbAlpha" MinWidth="35">0.7</TextBox>
+                <TextBlock  Text="Beta: "/>
+                <TextBox x:Name="TbBeta" MinWidth="35">0.5</TextBox>
+                <TextBlock Text="Gamma: "/>
+                <TextBox x:Name="TbGamma" MinWidth="35">-100</TextBox>
+            </StackPanel>
+            <ComboBox x:Name="CbOperation" SelectedIndex="0" SelectionChanged="CbOperation_OnSelectionChanged" >
+                <ComboBoxItem Content="Add"/>
+                <ComboBoxItem Content="Blend"/>
+                <ComboBoxItem Content="Not"/>
+                <ComboBoxItem Content="And"/>
+                <ComboBoxItem Content="or"/>
+                <ComboBoxItem Content="xor"/>
+            </ComboBox>
+            <Button Margin="10,0,0,0" Click="ButtonCalculate_OnClick">Calculate</Button>
+        </StackPanel>
+        <Image Grid.Row="1" Grid.Column="0" x:Name="ImgInpA" />
+        <Image Grid.Row="1" Grid.Column="1" x:Name="ImgInpB" />
+        <Image Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="ImgResult" />
+        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="BtnCancel" IsCancel="True" MinWidth="50" Margin="0,0,10,0">Cancel</Button>
+            <Button Name="BtnOk" IsDefault="True" Click="BtnOk_OnClick" MinWidth="50" Margin="0,0,10,0">Ok</Button>
+        </StackPanel>
+    </Grid>
+</Window>

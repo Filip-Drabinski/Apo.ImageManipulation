@@ -1,0 +1,173 @@
+﻿<UserControl x:Class="Apo.Gui.UserControls.MenuUc"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d">
+    <Menu>
+        <MenuItem x:Name="MiFile" Header="File">
+            <MenuItem Click="Open_OnClick" Header="Open" />
+            <MenuItem Click="OpenInNewWindow_OnClick" Header="Open in new Window" />
+            <MenuItem x:Name="MiDuplicate" Click="Duplicate_OnClick" Header="Duplicate" />
+            <MenuItem x:Name="MiSave" Click="Save_OnClick" Header="Save" />
+            <MenuItem x:Name="MiSaveAs" Click="SaveAs_OnClick" Header="Save as" />
+            <MenuItem x:Name="MiCloseImage" Click="CloseImage_OnClick" Header="Close" />
+            <MenuItem x:Name="MiAbout" Click="MiAbout_OnClick" Header="About"></MenuItem>
+            <Separator />
+            <MenuItem Click="Exit_OnClick" Header="Exit" />
+        </MenuItem>
+        <MenuItem x:Name="MiEdit" Header="Edit">
+            <MenuItem Header="Color mode" >
+                <RadioButton x:Name="MiGrayscale" GroupName="ColorMode" Click="RadioColorModeGrayscale_OnClick">Grayscale</RadioButton>
+                <RadioButton x:Name="MiBgr" GroupName="ColorMode" Click="RadioColorModeBgr_OnClick">Bgr</RadioButton>
+                <RadioButton x:Name="MiBgra" GroupName="ColorMode" Click="RadioColorModeBgra_OnClick">Bgra</RadioButton>
+            </MenuItem>
+            <MenuItem x:Name="MiUndo" Click="Undo_OnClick" Header="Undo" />
+            <MenuItem x:Name="MiRedo" Click="Redo_OnClick" Header="Redo" />
+        </MenuItem>
+        <MenuItem x:Name="MiView" Header="View">
+            <MenuItem x:Name="ScalingMenuItem" Header="Scaling">
+                <!--ScalingHighQuality duplicate
+                <MenuItem>
+                    <MenuItem.Template>
+                        <ControlTemplate>
+                            <RadioButton
+                                x:Name="ScalingFant" IsChecked="{Binding Path=IsFantChecked}"
+                                Content="Fant"
+                                ToolTip="Use very high quality Fant bitmap scaling, which is slower than all other bitmap scaling modes, but produces higher quality output."
+                                Click="ScalingFant_OnClick" />
+                        </ControlTemplate>
+                    </MenuItem.Template>
+                </MenuItem>-->
+                <MenuItem>
+                    <MenuItem.Template>
+                        <ControlTemplate>
+                            <RadioButton
+                                x:Name="ScalingHighQuality" IsChecked="{Binding Path=IsHighQualityChecked}"
+                                Content="High quality"
+                                ToolTip="Use high quality bitmap scaling, which is slower than LowQuality mode, but produces higher quality output. The HighQuality mode is the same as the Fant mode."
+                                Click="ScalingHighQuality_OnClick" />
+                        </ControlTemplate>
+                    </MenuItem.Template>
+                </MenuItem>
+                <!-- ScalingLowQuality duplicate
+                <MenuItem>
+                    <MenuItem.Template>
+                        <ControlTemplate>
+                            <RadioButton
+                                x:Name="ScalingLinear" IsChecked="{Binding Path=IsLinearChecked}"
+                                Content="Linear"
+                                ToolTip="Use linear bitmap scaling, which is faster than HighQuality mode, but produces lower quality output."
+                                Click="ScalingLinear_OnClick" />
+                        </ControlTemplate>
+                    </MenuItem.Template>
+                </MenuItem>-->
+                <MenuItem>
+                    <MenuItem.Template>
+                        <ControlTemplate>
+                            <RadioButton
+                                x:Name="ScalingLowQuality" IsChecked="{Binding Path=IsLowQualityChecked}"
+                                Content="Low quality"
+                                ToolTip="Use bilinear bitmap scaling, which is faster than HighQuality mode, but produces lower quality output. The LowQuality mode is the same as the Linear mode."
+                                Click="ScalingLowQuality_OnClick" />
+                        </ControlTemplate>
+                    </MenuItem.Template>
+                </MenuItem>
+                <MenuItem>
+                    <MenuItem.Template>
+                        <ControlTemplate>
+                            <RadioButton
+                                x:Name="ScalingNearestNeighbor" IsChecked="{Binding Path=IsNearestNeighborChecked}"
+                                Content="Nearest neighbor"
+                                ToolTip="Use nearest-neighbor bitmap scaling, which provides performance benefits over LowQuality mode when the software rasterizer is used. This mode is often used to magnify a bitmap."
+                                Click="ScalingNearestNeighbor_OnClick" />
+                        </ControlTemplate>
+                    </MenuItem.Template>
+                </MenuItem>
+            </MenuItem>
+        </MenuItem>
+        <MenuItem x:Name="MiTools" Header="Tools">
+            <MenuItem Header="Histogram">
+                <MenuItem x:Name="MiHistogramShow" Header="Show" Click="HistogramShow_OnClick" />
+                <MenuItem x:Name="MiHistogramStretch" Header="Stretch" Click="HistogramStretch_OnClick" />
+                <MenuItem x:Name="MiHistogramEqualize" Header="Equalize" Click="HistogramEqualize_OnClick" />
+            </MenuItem>
+            <MenuItem x:Name="MiIntensityProfileShow" Header="IntensityProfile" Click="IntensityProfile_OnClick" />
+            <MenuItem x:Name="MiNegationShow" Header="Negation" Click="MiNegationShow_OnClick" />
+            <MenuItem x:Name="MiThresholdingShow" Header="Thresholding" Click="MiThresholdingShow_OnClick" />
+            <MenuItem x:Name="MiPosterizeShow" Header="Posterize" Click="MiPosterizeShow_OnClick" />
+            <MenuItem x:Name="MiFilters" Header="Filters">
+                <MenuItem x:Name="MiBlurContShow" Header="Blur">
+                    <MenuItem x:Name="MiBlurShow" Header="Blur" Click="MiBlurShow_OnClick" />
+                    <MenuItem x:Name="MiMedianBlurShow" Header="MedianBlur" Click="MiMedianBlurShow_OnClick" />
+                    <MenuItem x:Name="MiGaussianBlurShow" Header="GaussianBlur" Click="MiGaussianBlurShow_OnClick" />
+                </MenuItem>
+                <MenuItem x:Name="MiEdgeDetectionShow" Header="EdgeDetection">
+                    <MenuItem x:Name="MiEdgeDetectionLaplacianShow" Header="Laplacian"
+                              Click="MiEdgeDetectionLaplacianShow_OnClick" />
+                    <MenuItem x:Name="MiEdgeDetectionSobelShow" Header="Sobel" Click="MiEdgeDetectionSobelShow_OnClick" />
+                    <MenuItem x:Name="MiEdgeDetectionCannyShow" Header="Canny" Click="MiEdgeDetectionCannyShow_OnClick" />
+                    <MenuItem x:Name="MiDirectionalEdgeDetectionShow" Header="DirectionalEdgeDetection"
+                              Click="MiDirectionalEdgeDetectionShow_OnClick" />
+                </MenuItem>
+                <MenuItem x:Name="MiLinearSharpenShow" Header="LinearSharpen" Click="MiLinearSharpenShow_OnClick" />
+                <MenuItem x:Name="MiCustomShow" Header="Custom" Click="MiCustomShow_OnClick" />
+                <MenuItem x:Name="MiTwoStepCustomShow" Header="TwoStepCustom" Click="MiTwoStepCustomShow_OnClick" />
+            </MenuItem>
+            <MenuItem x:Name="MiTwoImagesShow" Header="TwoImages" Click="MiTwoImages_OnClick" />
+            <MenuItem x:Name="MiMorphologyShow" Header="Morphology" Click="MiMorphology_OnClick" />
+            <MenuItem x:Name="MiSkeletonizationShow" Header="Skeletonization" Click="MiSkeletonization_OnClick" />
+            <MenuItem x:Name="MiImageSegmentation" Header="Image segmentation" >
+                <MenuItem x:Name="MiManualThresholding" Header="Manual thresholding Segmentation" Click="MiManualThresholding_OnClick"/>
+                <MenuItem x:Name="MiAdaptiveThresholding" Header="Adaptive thresholding" Click="MiAdaptiveThresholding_OnClick"/>
+                <MenuItem x:Name="MiOtsuSegmentation" Header="Otsu" Click="MiOtsuSegmentation_OnClick"/>
+                <MenuItem Header="Watershed" Click="MiWatershedSegmentation_OnClick"/>
+            </MenuItem>
+
+            <MenuItem Header="Find contours" Click="MiFindContours_OnClick"/>
+        </MenuItem>
+        <MenuItem>
+            <MenuItem Header="Lab1">
+                <MenuItem Header="Open" Click="Open_OnClick"/>
+                <MenuItem Header="Histogram" Click="HistogramShow_OnClick"/>
+                <MenuItem Header="Intensity Profile" Click="IntensityProfile_OnClick"/>
+            </MenuItem>
+            <MenuItem Header="Lab2">
+                <MenuItem Header="Stretch Histogram" Click="HistogramStretch_OnClick"/>
+                <MenuItem Header="Equalize Histogram" Click="HistogramEqualize_OnClick"/>
+                <MenuItem Header="Negate" Click="MiNegationShow_OnClick"/>
+                <MenuItem Header="Thresholding" Click="MiThresholdingShow_OnClick"/>
+                <MenuItem Header="Posterize" Click="MiPosterizeShow_OnClick"/>
+            </MenuItem>
+            <MenuItem Header="Lab3">
+                <MenuItem Header="Blur" Click="MiBlurShow_OnClick"/>
+                <MenuItem Header="Gaussian blur" Click="MiGaussianBlurShow_OnClick"/>
+                <MenuItem Header="median blur" Click="MiMedianBlurShow_OnClick"/>
+                <MenuItem Header="Edge detection Sobel" Click="MiEdgeDetectionSobelShow_OnClick"/>
+                <MenuItem Header="Edge detection Laplacian" Click="MiEdgeDetectionLaplacianShow_OnClick"/>
+                <MenuItem Header="Edge detection Canny" Click="MiEdgeDetectionCannyShow_OnClick"/>
+                <MenuItem Header="Linear sharpen" Click="MiLinearSharpenShow_OnClick"/>
+                <MenuItem Header="Directional edge detection" Click="MiDirectionalEdgeDetectionShow_OnClick"/>
+                <MenuItem Header="Custom filter2d" Click="MiCustomShow_OnClick"/>
+                <MenuItem Header="Two image operations" Click="MiTwoImages_OnClick"/>
+            </MenuItem>
+            <MenuItem Header="Lab4">
+                <MenuItem Header="Morphology" Click="MiMorphology_OnClick"/>
+                <MenuItem Header="Two step filter2d" Click="MiTwoStepCustomShow_OnClick"/>
+                <MenuItem Header="Skeletonization" Click="MiSkeletonization_OnClick"/>
+            </MenuItem>
+            <MenuItem Header="Lab5">
+                <MenuItem  Header="Manual thresholding Segmentation" Click="MiManualThresholding_OnClick"/>
+                <MenuItem  Header="Adaptive thresholding" Click="MiAdaptiveThresholding_OnClick"/>
+                <MenuItem Header="Otsu" Click="MiOtsuSegmentation_OnClick"/>
+                <MenuItem Header="Watershed" Click="MiWatershedSegmentation_OnClick"/>
+            </MenuItem>
+            <MenuItem Header="Lab6">
+                <MenuItem Header="Find contours" Click="MiFindContours_OnClick"/>
+            </MenuItem>
+            <MenuItem Header="Lab7">
+
+            </MenuItem>
+        </MenuItem>
+    </Menu>
+</UserControl>

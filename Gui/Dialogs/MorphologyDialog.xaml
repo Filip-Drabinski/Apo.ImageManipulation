@@ -1,0 +1,52 @@
+﻿<Window x:Class="Apo.Gui.Dialogs.MorphologyDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:Apo.Gui.Models"
+        xmlns:uc="clr-namespace:Apo.Gui.UserControls"
+        mc:Ignorable="d"
+        Title="MorphologyDialog" Height="450" Width="800" x:Name="Window">
+    <Window.DataContext>
+        <models:MorphologyModel x:Name="Model" />
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="150"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Row="0" Grid.Column="1" x:Name="Img" />
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Label>Operation: </Label>
+            <RadioButton GroupName="Operation" IsChecked="True" Click="LbiErode_OnSelected">Erode</RadioButton>
+            <RadioButton GroupName="Operation" Click="LbiDilate_OnSelected">Dilate</RadioButton>
+            <RadioButton GroupName="Operation" Click="LbiOpen_OnSelected">Open</RadioButton>
+            <RadioButton GroupName="Operation" Click="LbiClose_OnSelected">Close</RadioButton>
+            <Separator/>
+            <Label>Shape: </Label>
+            <RadioButton GroupName="Shape" IsChecked="True" Click="LbiCross_OnSelected">Cross</RadioButton>
+            <RadioButton GroupName="Shape" Click="LbiEllipse_OnSelected">Ellipse</RadioButton>
+            <TextBlock VerticalAlignment="Center">Size:</TextBlock>
+            <uc:TextBoxInt x:Name="TbiSize" ValueChanged="TbiSize_OnValidateValue" ToolTip="x >= 1, x%2 = 1"  Value="3"></uc:TextBoxInt>
+            <Separator/>
+            <Label>Border:</Label>
+            <RadioButton GroupName="Border" IsChecked="True" Click="LbiReplicate_OnSelected">Replicate</RadioButton>
+            <RadioButton GroupName="Border" Click="LbiReflect_OnSelected">Reflect</RadioButton>
+            <RadioButton x:Name="BorderConstant" GroupName="Border" Click="LbiConstant_OnSelected">Constant</RadioButton>
+            <TextBlock VerticalAlignment="Center">Constant:</TextBlock>
+            <uc:TextBoxInt x:Name="TbiConstant" ValueChanged="TbiConstant_OnValidateValue" Value="0" IsEnabled="{Binding ElementName=BorderConstant, Path=IsChecked}"/>
+            <Separator/>
+            <TextBlock VerticalAlignment="Center">Number of iterations:</TextBlock>
+            <uc:TextBoxInt x:Name="TbiIterations" ValueChanged="TbiIterations_OnValueChanged" Value="1"/>
+            
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="BtnCancel" IsCancel="True" MinWidth="50" Margin="0,0,10,0">Cancel</Button>
+            <Button Name="BtnOk" IsDefault="True" Click="BtnOk_OnClick" MinWidth="50" Margin="0,0,10,0">Ok</Button>
+        </StackPanel>
+    </Grid>
+</Window>

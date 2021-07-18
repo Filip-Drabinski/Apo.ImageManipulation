@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Apo.Core.ApoImage">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgBIJAABAAIAAIACAABCEAAAAQAIEAEQxCAAAAAABA=</HashCode>
+      <FileName>Core\ApoImage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Apo.Core.ApoImage&lt;TColor&gt;">
+    <Position X="2.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgBIJAABAAIAAAACAABCEAAAAQAABAAQhAAAAAAAAA=</HashCode>
+      <FileName>Core\ApoImage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Apo.Core.ApoImageBgra">
+    <Position X="5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAQQAAAAAAABA=</HashCode>
+      <FileName>Core\ApoImage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Apo.Core.ApoImageGray">
+    <Position X="0.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAQQAAAAAAABA=</HashCode>
+      <FileName>Core\ApoImage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Apo.Core.ApoImageBgr">
+    <Position X="2.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAQQAAAAAAABA=</HashCode>
+      <FileName>Core\ApoImage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Apo.Core.Extensions">
+    <Position X="6.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Apo.Core.NotificationSystem">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="Apo.Core.NotificationSystem.Notification" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Core\NotificationSystem.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Apo.Core.NotificationSystem.CollectImages" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Core\NotificationSystem.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AEAEAQICAEAAAAAAAAAIAAAIAQAIgAJAQAAAAAEAAEA=</HashCode>
+      <FileName>Core\NotificationSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Apo.Core.ImageModifiersCv.CannyModifier" BaseTypeListCollapsed="true">
+    <Position X="14.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAACAAAADA=</HashCode>
+      <FileName>Core\ImageModifiersCv\CannyModifier.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Apo.Core.ImageModifiersCv.Custom2dFilterModifier" BaseTypeListCollapsed="true">
+    <Position X="14.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAgAAQAAAA=</HashCode>
+      <FileName>Core\ImageModifiersCv\Custom2dFilterModifier.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Apo.Core.ImageModifiersCv.EdgeDetectionSobelModifier" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAgAABAAAAAIAAAAAAIAAAAAAAAAAAAAAAAAAAQgAAA=</HashCode>
+      <FileName>Core\ImageModifiersCv\EdgeDetectionSobelModifier.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Apo.Core.ImageModifiersCv.Filter2d" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAgAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Core\ImageModifiersCv\Filter2d.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Apo.Core.ImageModifiersCv.FindContoursModifier" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAACAAABAAAAAAAAAAABAgAgAgAAAAA=</HashCode>
+      <FileName>Core\ImageModifiersCv\FindContoursModifier.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Apo.Core.ImageModifiersCv.GaussianBlur" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAABAAAAAAAAAAAAEAAABABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\ImageModifiersCv\GaussianBlur.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Apo.Core.ImageModifiersCv.GaussianBlurModifier" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAABAAAAAAAAAAAAEAAABAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Core\ImageModifiersCv\GaussianBlurModifier.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Apo.Core.ImageModifiersCv.ImageSkeletonization" BaseTypeListCollapsed="true">
+    <Position X="16" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\ImageModifiersCv\ImageSkeletonization.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Apo.Core.ImageModifiersCv.LaplacianModifier" BaseTypeListCollapsed="true">
+    <Position X="16" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAgAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAQgAAA=</HashCode>
+      <FileName>Core\ImageModifiersCv\LaplacianModifier.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Apo.Core.ImageModifiersCv.MedianBlurModifier" BaseTypeListCollapsed="true">
+    <Position X="14.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Core\ImageModifiersCv\MedianBlurModifier.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Apo.Core.ImageModifiersCv.MorphologyModifier" BaseTypeListCollapsed="true">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAIAAAAAAIAIAACAAAAAAEAAAQAAAA=</HashCode>
+      <FileName>Core\ImageModifiersCv\MorphologyModifier.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Apo.Core.ImageModifiersCv.SegmentationAdaptiveThresholding" BaseTypeListCollapsed="true">
+    <Position X="16" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAgAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAgAAACAAAAA=</HashCode>
+      <FileName>Core\ImageModifiersCv\SegmentationAdaptiveThresholding.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Apo.Core.ImageModifiersCv.SegmentationOtsu" BaseTypeListCollapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAQABAAAAAAAAAAAAEAAABABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\ImageModifiersCv\SegmentationOtsu.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Apo.Core.ImageModifiersCv.SegmentationThresholding" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Core\ImageModifiersCv\SegmentationThresholding.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Apo.Core.ImageModifiersCv.SegmentationWatershed" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAACggAAAAAAAAgAAAAAAgAACAAJA=</HashCode>
+      <FileName>Core\ImageModifiersCv\SegmentationWatershed.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Apo.Core.ImageModifiersCv.TwoStepFilter2d" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAgAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\ImageModifiersCv\TwoStepFilter2d.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Apo.Core.ImageModifiers.ImageCopyPixels">
+    <Position X="19.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Core\ImageModifiers\ImageCopyPixels.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Apo.Core.ImageModifiers.ImageNegation">
+    <Position X="21.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\ImageModifiers\ImageNegation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Struct Name="Apo.Core.ApoHistogram">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAACAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Core\ApoHistogram.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Apo.Core.ChannelArray&lt;TType&gt;">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABBAAAAAAGAAAAABAAAAAABAAAQAAAAAAAAA=</HashCode>
+      <FileName>Core\ApoHistogram.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Apo.Core.ApoIntensityProfile">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAgAAACAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Core\ApoIntensityProfile.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="Apo.Core.ImageModifiersCv.IImageModifierCv">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\ImageModifiersCv\IImageModifierCv.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Apo.Core.ImageModifiers.IImageModifier">
+    <Position X="18" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\ImageModifiers\IImageModifier.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Apo.Core.ImageType">
+    <Position X="0.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAABAAAACAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Core\ApoImage.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Apo.Core.ChannelType">
+    <Position X="0.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAABAAAAAAgAAAAAAAAAAAAAAABAAAAAAABAAABA=</HashCode>
+      <FileName>Core\ApoImage.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Apo.Core.Message">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAhAAACAAAAAIAAAAAAAAAAAAAAAAAAAACAAEAAAA=</HashCode>
+      <FileName>Core\NotificationSystem.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

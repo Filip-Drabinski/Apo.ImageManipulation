@@ -1,0 +1,102 @@
+﻿<Window x:Class="Apo.Gui.Dialogs.TwoStepCustomFilterDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Apo.Gui.Dialogs"
+        xmlns:models="clr-namespace:Apo.Gui.Models"
+        xmlns:uc="clr-namespace:Apo.Gui.UserControls"
+        mc:Ignorable="d"
+        Title="TwoStepCustomFilterDialog" Height="450" Width="800">
+    <Window.DataContext>
+        <models:CustomFilterModel x:Name="Model" />
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+            <StackPanel Orientation="Horizontal">
+                <uc:TextBoxDouble MinWidth="40"  Value="1.0"  ValueChanged="TextBoxDoubleA0XOO_OnValueChanged"/>
+                <uc:TextBoxDouble MinWidth="40"  Value="1.0" ValueChanged="TextBoxDoubleA0OXO_OnValueChanged"/>
+                <uc:TextBoxDouble MinWidth="40"  Value="0" ValueChanged="TextBoxDoubleA0OOX_OnValueChanged"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <uc:TextBoxDouble MinWidth="40" Value="1.0"  ValueChanged="TextBoxDoubleA1XOO_OnValueChanged"/>
+                <uc:TextBoxDouble MinWidth="40" Value="0"  ValueChanged="TextBoxDoubleA1OXO_OnValueChanged"/>
+                <uc:TextBoxDouble MinWidth="40" Value="-1.0"  ValueChanged="TextBoxDoubleA1OOX_OnValueChanged"/>
+            </StackPanel>                                   
+            <StackPanel Orientation="Horizontal">           
+                <uc:TextBoxDouble MinWidth="40" Value="0"  ValueChanged="TextBoxDoubleA2XOO_OnValueChanged"/>
+                <uc:TextBoxDouble MinWidth="40" Value="-1.0"  ValueChanged="TextBoxDoubleA2OXO_OnValueChanged"/>
+                <uc:TextBoxDouble MinWidth="40" Value="-1.0"  ValueChanged="TextBoxDoubleA2OOX_OnValueChanged"/>
+            </StackPanel>
+            <Separator></Separator>
+            <StackPanel Orientation="Horizontal">
+                <uc:TextBoxDouble MinWidth="40" x:Name="B00"  ValueChanged="TextBoxDoubleB0XOO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="B01"  ValueChanged="TextBoxDoubleB0OXO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="B02"  ValueChanged="TextBoxDoubleB0OOX_OnValueChanged" Value="1.0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <uc:TextBoxDouble MinWidth="40" x:Name="B10"  ValueChanged="TextBoxDoubleB1XOO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="B11"  ValueChanged="TextBoxDoubleB1OXO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="B12"  ValueChanged="TextBoxDoubleB1OOX_OnValueChanged" Value="1.0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <uc:TextBoxDouble MinWidth="40" x:Name="B20"  ValueChanged="TextBoxDoubleB2XOO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="B21"  ValueChanged="TextBoxDoubleB2OXO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="B22"  ValueChanged="TextBoxDoubleB2OOX_OnValueChanged" Value="1.0"/>
+            </StackPanel>
+            <Separator></Separator>
+            <Button Click="ButtonCalculate2x3x3_OnClick">Calculate</Button>
+            <Separator></Separator>
+            <StackPanel Orientation="Horizontal">
+                <uc:TextBoxDouble MinWidth="40" x:Name="C00"  ValueChanged="TextBoxDouble0XOOOO_OnValueChanged"  Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C01"  ValueChanged="TextBoxDouble0OXOOO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C02"  ValueChanged="TextBoxDouble0OOXOO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C03"  ValueChanged="TextBoxDouble0OOOXO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C04"  ValueChanged="TextBoxDouble0OOOOX_OnValueChanged" Value="1.0"/>
+            </StackPanel>                                                                              
+            <StackPanel Orientation="Horizontal">
+                <uc:TextBoxDouble MinWidth="40" x:Name="C10" ValueChanged="TextBoxDouble1XOOOO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C11" ValueChanged="TextBoxDouble1OXOOO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C12" ValueChanged="TextBoxDouble1OOXOO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C13" ValueChanged="TextBoxDouble1OOOXO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C14" ValueChanged="TextBoxDouble1OOOOX_OnValueChanged" Value="1.0"/>
+            </StackPanel>                                                                                 
+            <StackPanel Orientation="Horizontal">
+                <uc:TextBoxDouble MinWidth="40" x:Name="C20" ValueChanged="TextBoxDouble2XOOOO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C21" ValueChanged="TextBoxDouble2OXOOO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C22" ValueChanged="TextBoxDouble2OOXOO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C23" ValueChanged="TextBoxDouble2OOOXO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C24" ValueChanged="TextBoxDouble2OOOOX_OnValueChanged" Value="1.0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <uc:TextBoxDouble MinWidth="40" x:Name="C30" ValueChanged="TextBoxDouble3XOOOO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C31" ValueChanged="TextBoxDouble3OXOOO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C32" ValueChanged="TextBoxDouble3OOXOO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C33" ValueChanged="TextBoxDouble3OOOXO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C34" ValueChanged="TextBoxDouble3OOOOX_OnValueChanged" Value="1.0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <uc:TextBoxDouble MinWidth="40" x:Name="C40" ValueChanged="TextBoxDouble4XOOOO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C41" ValueChanged="TextBoxDouble4OXOOO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C42" ValueChanged="TextBoxDouble4OOXOO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C43" ValueChanged="TextBoxDouble4OOOXO_OnValueChanged" Value="1.0"/>
+                <uc:TextBoxDouble MinWidth="40" x:Name="C44" ValueChanged="TextBoxDouble4OOOOX_OnValueChanged" Value="1.0"/>
+            </StackPanel>
+            <Separator></Separator>
+            <Button Click="ButtonCalculate5x5_OnClick" >Calculate</Button>
+        </StackPanel>
+        <Image Grid.Row="0" Grid.Column="1" x:Name="Img"></Image>
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="BtnCancel" IsCancel="True" MinWidth="50" Margin="0,0,10,0">Cancel</Button>
+            <Button Name="BtnOk" IsDefault="True" Click="BtnOk_OnClick" MinWidth="50" Margin="0,0,10,0">Ok</Button>
+        </StackPanel>
+    </Grid>
+</Window>

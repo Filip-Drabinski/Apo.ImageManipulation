@@ -1,0 +1,60 @@
+﻿<Window x:Class="Apo.Gui.Windows.ImageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:userControls="clr-namespace:Apo.Gui.UserControls"
+        mc:Ignorable="d"
+        Title="{Binding Name}" Height="450" Width="800" MinWidth="300" MinHeight="200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <userControls:MenuUc x:Name="MenuUc" Grid.Row="0" 
+                             Open="OpenFile"
+                             Exit="MenuUc_OnExit"
+                             Scaling="SetImageScaling"
+                             OpenInNewWindow="OpenInNewWindow"
+                             Duplicate="OpenDuplicate"
+                             Save="Save"
+                             SaveAs="SaveAs"
+                             Close="Close"
+                             HistogramShow="OpenHistogramWindow"
+                             IntensityProfileShow="OpenIntensityProfileWindow"
+                             HistogramStretch="HistogramStretch"
+                             HistogramEqualize="HistogramEqualize"
+                             Negation="Negation"
+                             Thresholding="Thresholding"
+                             Posterize="Posterize"
+                             Blur="Blur"
+                             GaussianBlur="GaussianBlur"
+                             EdgeDetectionLaplacian="EdgeDetectionLaplacian"
+                             EdgeDetectionSobel="EdgeDetectionSobel"
+                             EdgeDetectionCanny="EdgeDetectionCanny"
+                             DirectionalEdgeDetection="DirectionalEdgeDetection"
+                             LinearSharpen="LinearSharpen"
+                             CustomFilter="CustomFilter"
+                             MedianBlur="MedianBlur"
+                             TwoImages="TwoImages"
+                             Morphology="Morphology"
+                             Skeletonization="Skeletonization"
+                             TwoStepCustom="TwoStepCustom"
+                             ImageTypeChanged="ImageTypeChange"
+                             Undo="Undo"
+                             Redo="Redo"
+                             ManualThresholdingSegmentation="MenuUc_OnManualThresholdingSegmentation"
+                             AdaptiveThresholdingSegmentation="MenuUc_OnAdaptiveThresholdingSegmentation"
+                             OtsuSegmentation="MenuUc_OnOtsuSegmentation"
+                             WatershedSegmentation="MenuUc_OnWaterShedSegmentation"
+                             FindContours="MenuUc_OnFindContours"/>
+        <Image Grid.Row="1" x:Name="Img" Source="{Binding ImageSource}" />
+        <TextBlock Grid.Row="2" TextTrimming="CharacterEllipsis" TextWrapping="Wrap">
+            Height: <TextBlock Padding="0,0,0,0" Text="{Binding Height}"  TextTrimming="CharacterEllipsis"/>
+            Width:  <TextBlock Padding="0,0,0,0" Text="{Binding Width}" TextTrimming="CharacterEllipsis" />
+            Path: <TextBlock Padding="0,0,0,0" Text="{Binding FullPath}"  TextTrimming="CharacterEllipsis"/>
+            color mode: <TextBlock Padding="0,0,0,0" Text="{Binding Type}"  TextTrimming="CharacterEllipsis"/>
+        </TextBlock>
+    </Grid>
+</Window>

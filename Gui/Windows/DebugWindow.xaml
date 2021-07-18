@@ -1,0 +1,15 @@
+﻿<Window x:Class="Apo.Gui.Windows.DebugWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:userControls="clr-namespace:Apo.Gui.UserControls"
+        mc:Ignorable="d"
+        Title="DebugWindow" Height="450" Width="800">
+    <StackPanel>
+        <userControls:TextBoxInt ValueChanged="TextBoxInt_OnValidateValue" ToolTip="bte 0 lt 10" x:Name="BoxInt" Value="3"/>
+        <userControls:TextBoxDouble ValueChanged="TextBoxDouble_OnValidateValue" ToolTip="bte 0.5 lt 10" x:Name="BoxDouble" Value="3.5"/>
+        <Label Content="{Binding ElementName=BoxInt,Path=Value}"/>
+        <Label Content="{Binding ElementName=BoxDouble,Path=Value}"/>
+    </StackPanel>
+</Window>

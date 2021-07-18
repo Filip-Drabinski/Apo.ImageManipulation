@@ -1,0 +1,25 @@
+﻿<Window x:Class="Apo.Gui.Dialogs.ThresholdingSegmentationDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="ThresholdingSegmentationDialog" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" x:Name="Img" />
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Label>Threshold: </Label>
+            <Slider Minimum="0" Maximum="255" SmallChange="1" LargeChange="1" MinWidth="255" Name="SliderThreshold" ValueChanged="SliderThreshold_OnValueChanged" Value="127"></Slider>
+            <Label Content="{Binding ElementName=SliderThreshold, Path=Value}" MinWidth="50"></Label>
+            <Button Name="BtnCancel" IsCancel="True" MinWidth="50" Margin="0,0,10,0">Cancel</Button>
+            <Button Name="BtnOk"   IsDefault="True" Click="BtnOk_OnClick" MinWidth="50" Margin="0,0,10,0">Ok</Button>
+        </StackPanel>
+    </Grid>
+</Window>
