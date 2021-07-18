@@ -1,1 +1,1 @@
-# Apo.ImageManipulation
+Aplikacja zbiorcza Algorytmy przetwarzania obrazów
